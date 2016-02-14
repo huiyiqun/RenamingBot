@@ -44,7 +44,7 @@ def main_loop():
 
         if cmd[1:] == 'rename':
             logger.debug(msg)
-            tg.sender.channel_rename(msg.receiver.name, args)
+            tg.sender.channel_rename(msg.receiver.cmd, args)
 
 tg.receiver.start()
 tg.receiver.message(main_loop())
