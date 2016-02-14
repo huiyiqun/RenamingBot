@@ -17,7 +17,7 @@ self = tg.sender.get_self()['username']
 def main_loop():
     while True:
         msg = (yield)
-        if msg.event != 'message':  # Not a message
+        if msg.event != 'message' or 'text' not in msg:  # Not a text message
             logger.debug("this is not a message")
             continue
         logger.info("Message: %s", msg.text)
